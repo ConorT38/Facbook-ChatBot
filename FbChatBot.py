@@ -67,8 +67,8 @@ def click(x, y, numclicks=1):
      mouse_event(4, 0, 0, 0, 0)
 
 def Message(message):
-    #VK_SHIFT = 0x0F
-    #VK_SPACE = 0x20
+    VK_SHIFT = 0x0F
+    VK_SPACE = 0x20
     #KEY_0 = 0x30
     #KEY_1 = 0x31
     #KEY_2 = 0x32
