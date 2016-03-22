@@ -4,6 +4,9 @@ import time
 SendInput = ctypes.windll.user32.SendInput
 
 structure = ctypes.Structure
+VK_SHIFT = 0x0F
+VK_SPACE = 0x20
+VK_RETURN = 0x0D
 
 PUL = ctypes.POINTER(ctypes.c_ulong)
 class KeyBdInput(structure):
@@ -67,24 +70,22 @@ def click(x, y, numclicks=1):
      mouse_event(4, 0, 0, 0, 0)
 
 def Message(message):
-   VK_SHIFT = 0x0F
-    VK_SPACE = 0x20
-    VK_RETURN = 0x0D
-
-    hexcode = [0x0F,0x20,0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5A,0x0D,]
-    alphanum =[VK_SHIFT,VK_SPACE,"0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",VK_RETURN]
+    
+    
+    hexcode = [0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5A,0x0D,]
+    alphanum =["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",VK_RETURN]
     captial = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     message = list(message)
 
     for i,n in enumerate(message):
 
-        for j in len(hexcode):
-            if n = alphanum[j]:
+        for j in range(0,len(hexcode)):
+            if n == alphanum[j]:
                 message[i] = hexcode[j]
-        for t in len(captial):
-            if n = captial[t]:
+        for t in range(0,len(captial)):
+            if n == captial[t]:
                 PressKey(VK_SHIFT)
-                message[i]= hexcode[t+11]
+                message[i]= hexcode[t+9]
                 ReleaseKey(VK_SHIFT)
                 
         if n == ' ':
@@ -107,7 +108,10 @@ abc = 0
 
 m = raw_input("Enter bot message here:\n")
 while abc <15:
-    click(900,710)
+    click(500,500)
     Message(m)
-    time.sleep(0.2)
+    time.sleep(0.5)
+    PressKey(VK_RETURN)
+    ReleaseKey(VK_RETURN)
+    time.sleep(4)
     abc = abc+1
