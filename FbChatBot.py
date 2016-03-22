@@ -67,225 +67,26 @@ def click(x, y, numclicks=1):
      mouse_event(4, 0, 0, 0, 0)
 
 def Message(message):
-    VK_SHIFT = 0x0F
+   VK_SHIFT = 0x0F
     VK_SPACE = 0x20
-    #KEY_0 = 0x30
-    #KEY_1 = 0x31
-    #KEY_2 = 0x32
-    #KEY_3 = 0x33
-    #KEY_4 = 0x34
-    #KEY_5 = 0x35
-    #KEY_6 = 0x36
-    #KEY_7 = 0x37
-    #KEY_8 = 0x38
-    #KEY_9 = 0x39
-    #KEY_A = 0x41
-    #KEY_B = 0x42
-    #KEY_C = 0x43
-    #KEY_D = 0x44
-    #KEY_E = 0x45
-    #KEY_F = 0x46
-    #KEY_G = 0x47
-    #KEY_H = 0x48
-    #KEY_I = 0x49
-    #KEY_J = 0x4A
-    #KEY_K = 0x4B
-    #KEY_L = 0x4C
-    #KEY_M = 0x4D
-    #KEY_N = 0x4E
-    #KEY_O = 0x4F
-    #KEY_P = 0x50
-    #KEY_Q = 0x51
-    #KEY_R = 0x52
-    #KEY_S = 0x53
-    #KEY_T = 0x54
-    #KEY_U = 0x55
-    #KEY_V = 0x56
-    #KEY_W = 0x57
-    #KEY_X = 0x58
-    #KEY_Y = 0x59
-    #KEY_Z = 0x5A
-    #VK_RETURN = 0x0D
-    
+    VK_RETURN = 0x0D
+
+    hexcode = [0x0F,0x20,0x30,0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B,0x4C,0x4D,0x4E,0x4F,0x50,0x51,0x52,0x53,0x54,0x55,0x56,0x57,0x58,0x59,0x5A,0x0D,]
+    alphanum =[VK_SHIFT,VK_SPACE,"0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",VK_RETURN]
+    captial = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     message = list(message)
 
     for i,n in enumerate(message):
-        if n == "0":
-            message[i]= 0x30
-        if n == "1":
-            message[i]= 0x31
-        if n == "2":
-            message[i]= 0x32
-        if n == "3":
-            message[i]= 0x33
-        if n == "4":
-            message[i]= 0x34
-        if n == "5":
-            message[i]= 0x35
-        if n == "6":
-            message[i]= 0x36
-        if n == "7":
-            message[i]= 0x37
-        if n == "8":
-            message[i]= 0x38
-        if n == "9":
-            message[i]= 0x39
-        if n == "a":
-            message[i]= 0x41
-        if n == "b":
-            message[i]= 0x42
-        if n == "c":
-            message[i]= 0x43
-        if n == "d":
-            message[i]= 0x44
-        if n == "e":
-            message[i]= 0x45
-        if n == "f":
-            message[i]= 0x46
-        if n == "g":
-            message[i]= 0x47
-        if n == "h":
-            message[i]= 0x48
-        if n == "i":
-            message[i]= 0x49
-        if n == "j":
-            message[i]= 0x4A
-        if n == "k":
-            message[i]= 0x4B
-        if n == "l":
-            message[i]= 0x4C
-        if n == "m":
-            message[i]= 0x4D
-        if n == "n":
-            message[i]= 0x4E
-        if n == "o":
-            message[i]= 0x4F
-        if n == "p":
-            message[i]= 0x50
-        if n == "q":
-            message[i]= 0x51
-        if n == "r":
-            message[i]= 0x52
-        if n == "s":
-            message[i]= 0x53
-        if n == "t":
-            message[i]= 0x54
-        if n == "u":
-            message[i]= 0x55
-        if n == "v":
-            message[i]= 0x56
-        if n == "w":
-            message[i]= 0x57
-        if n == "x":
-            message[i]= 0x58
-        if n == "y":
-            message[i]= 0x59
-        if n == "z":
-            message[i]= 0x5A
-        if n == "A":
-            PressKey(VK_SHIFT)
-            message[i]= 0x41
-            ReleaseKey(VK_SHIFT)
-        if n == "B":
-            PressKey(VK_SHIFT)
-            message[i]= 0x42
-            ReleaseKey(VK_SHIFT)
-        if n == "C":
-            PressKey(VK_SHIFT)
-            message[i]= 0x43
-            ReleaseKey(VK_SHIFT)
-        if n == "D":
-            PressKey(VK_SHIFT)
-            message[i]= 0x44
-            ReleaseKey(VK_SHIFT)
-        if n == "E":
-            PressKey(VK_SHIFT)
-            message[i]= 0x45
-            ReleaseKey(VK_SHIFT)
-        if n == "F":
-            PressKey(VK_SHIFT)
-            message[i]= 0x46
-            ReleaseKey(VK_SHIFT)
-        if n == "G":
-            PressKey(VK_SHIFT)
-            message[i]= 0x47
-            ReleaseKey(VK_SHIFT)
-        if n == "H":
-            PressKey(VK_SHIFT)
-            message[i]= 0x48
-            ReleaseKey(VK_SHIFT)
-        if n == "I":
-            PressKey(VK_SHIFT)
-            message[i]= 0x49
-            ReleaseKey(VK_SHIFT)
-        if n == "J":
-            PressKey(VK_SHIFT)
-            message[i]= 0x4A
-            ReleaseKey(VK_SHIFT)
-        if n == "K":
-            PressKey(VK_SHIFT)
-            message[i]= 0x4B
-            ReleaseKey(VK_SHIFT)
-        if n == "L":
-            PressKey(VK_SHIFT)
-            message[i]= 0x4C
-            ReleaseKey(VK_SHIFT)
-        if n == "M":
-            PressKey(VK_SHIFT)
-            message[i]= 0x4D
-            ReleaseKey(VK_SHIFT)
-        if n == "N":
-            PressKey(VK_SHIFT)
-            message[i]= 0x4E
-            ReleaseKey(VK_SHIFT)
-        if n == "O":
-            PressKey(VK_SHIFT)
-            message[i]= 0x4F
-            ReleaseKey(VK_SHIFT)
-        if n == "P":
-            PressKey(VK_SHIFT)
-            message[i]= 0x50
-            ReleaseKey(VK_SHIFT)
-        if n == "Q":
-            PressKey(VK_SHIFT)
-            message[i]= 0x51
-            ReleaseKey(VK_SHIFT)
-        if n == "R":
-            PressKey(VK_SHIFT)
-            message[i]= 0x52
-            ReleaseKey(VK_SHIFT)
-        if n == "S":
-            PressKey(VK_SHIFT)
-            message[i]= 0x53
-            ReleaseKey(VK_SHIFT)
-        if n == "T":
-            PressKey(VK_SHIFT)
-            message[i]= 0x54
-            ReleaseKey(VK_SHIFT)
-        if n == "U":
-            PressKey(VK_SHIFT)
-            message[i]= 0x55
-            ReleaseKey(VK_SHIFT)
-        if n == "V":
-            PressKey(VK_SHIFT)
-            message[i]= 0x56
-            ReleaseKey(VK_SHIFT)
-        if n == "W":
-            PressKey(VK_SHIFT)
-            message[i]= 0x57
-            ReleaseKey(VK_SHIFT)
-        if n == "X":
-            PressKey(VK_SHIFT)
-            message[i]= 0x58
-            ReleaseKey(VK_SHIFT)
-        if n == "Y":
-            PressKey(VK_SHIFT)
-            message[i]= 0x59
-            ReleaseKey(VK_SHIFT)
-        if n == "Z":
-            PressKey(VK_SHIFT)
-            message[i]= 0x5A
-            ReleaseKey(VK_SHIFT)
+
+        for j in len(hexcode):
+            if n = alphanum[j]:
+                message[i] = hexcode[j]
+        for t in len(captial):
+            if n = captial[t]:
+                PressKey(VK_SHIFT)
+                message[i]= hexcode[t+11]
+                ReleaseKey(VK_SHIFT)
+                
         if n == ' ':
             message[i]= 0x20
         if n == ',':
