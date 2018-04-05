@@ -7,3 +7,7 @@ This is a simple bot that can click on the chat window, then the input box, then
 -ctypes
 -time
 
+<hr/>
+
+<h1>Edit:</h1>
+Been a few years since I made this, and looking back now it would be better to implement this in something like Selenium Webdriver.
